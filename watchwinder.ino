@@ -78,14 +78,16 @@ int StartWinding()
     DateTime currentTime = rtc.now();
     TimeSpan elapsedTime = currentTime - startTime;
     float currentProgress = 100.0 * (float)counter / 350.0;
+    //current progress is stored as a precentage
    
     DisplayProgress(currentProgress, elapsedTime);
-
+    
     int Steps = -2048;
     //-2048 is one full rotation counter clockwise 
 
    
     stepper.step(Steps);
+    //move motor
 
     delay(2 * SECOND);     
 
